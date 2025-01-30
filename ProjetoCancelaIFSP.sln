@@ -1,0 +1,58 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.12.35707.178
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CancelaIFSP.App", "ProjetoCancelaIFSP\CancelaIFSP.App.csproj", "{D542264E-FF98-4905-AB97-79749D0EB91D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CancelaIFSP.App", "CancelaIFSP.App", "{ECB55156-68BF-42BD-ADBA-5CF1EEAAE8A0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CancelaIFSP.Testes", "CancelaIFSP.Testes", "{62286917-68EB-438B-9CF6-D168931926DA}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CancelaIFSP.DDD", "CancelaIFSP.DDD", "{C2FB9161-4595-4D6A-9C27-16A5C1FA762E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancelaIFSP.Service", "CancelaIFSP.Service\CancelaIFSP.Service.csproj", "{F733D03A-9003-44E8-96DE-3BAB3579EB08}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancelaIFSP.Domain", "CancelaIFSP.Domain\CancelaIFSP.Domain.csproj", "{A1850EF2-8527-411D-BDCE-A2A5ACD85DF0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancelaIFSP.Repository", "CancelaIFSP.Repository\CancelaIFSP.Repository.csproj", "{120E6880-3548-49E2-8D78-33AE9E15C28B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CancelaIFSP.Teste", "CancelaIFSP.Teste\CancelaIFSP.Teste.csproj", "{AFC99A1A-98A0-441D-B6A0-444A003B6AA4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D542264E-FF98-4905-AB97-79749D0EB91D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D542264E-FF98-4905-AB97-79749D0EB91D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D542264E-FF98-4905-AB97-79749D0EB91D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D542264E-FF98-4905-AB97-79749D0EB91D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F733D03A-9003-44E8-96DE-3BAB3579EB08}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F733D03A-9003-44E8-96DE-3BAB3579EB08}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F733D03A-9003-44E8-96DE-3BAB3579EB08}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F733D03A-9003-44E8-96DE-3BAB3579EB08}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1850EF2-8527-411D-BDCE-A2A5ACD85DF0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1850EF2-8527-411D-BDCE-A2A5ACD85DF0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1850EF2-8527-411D-BDCE-A2A5ACD85DF0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1850EF2-8527-411D-BDCE-A2A5ACD85DF0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{120E6880-3548-49E2-8D78-33AE9E15C28B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{120E6880-3548-49E2-8D78-33AE9E15C28B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{120E6880-3548-49E2-8D78-33AE9E15C28B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{120E6880-3548-49E2-8D78-33AE9E15C28B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFC99A1A-98A0-441D-B6A0-444A003B6AA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFC99A1A-98A0-441D-B6A0-444A003B6AA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFC99A1A-98A0-441D-B6A0-444A003B6AA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFC99A1A-98A0-441D-B6A0-444A003B6AA4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D542264E-FF98-4905-AB97-79749D0EB91D} = {ECB55156-68BF-42BD-ADBA-5CF1EEAAE8A0}
+		{F733D03A-9003-44E8-96DE-3BAB3579EB08} = {C2FB9161-4595-4D6A-9C27-16A5C1FA762E}
+		{A1850EF2-8527-411D-BDCE-A2A5ACD85DF0} = {C2FB9161-4595-4D6A-9C27-16A5C1FA762E}
+		{120E6880-3548-49E2-8D78-33AE9E15C28B} = {C2FB9161-4595-4D6A-9C27-16A5C1FA762E}
+		{AFC99A1A-98A0-441D-B6A0-444A003B6AA4} = {62286917-68EB-438B-9CF6-D168931926DA}
+	EndGlobalSection
+EndGlobal
