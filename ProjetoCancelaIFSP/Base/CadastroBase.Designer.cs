@@ -60,7 +60,7 @@
             materialTabControl.Multiline = true;
             materialTabControl.Name = "materialTabControl";
             materialTabControl.SelectedIndex = 0;
-            materialTabControl.Size = new System.Drawing.Size(520, 411);
+            materialTabControl.Size = new System.Drawing.Size(407, 380);
             materialTabControl.TabIndex = 0;
             // 
             // tabPageCadastro
@@ -70,7 +70,7 @@
             tabPageCadastro.Location = new System.Drawing.Point(4, 31);
             tabPageCadastro.Name = "tabPageCadastro";
             tabPageCadastro.Padding = new System.Windows.Forms.Padding(3);
-            tabPageCadastro.Size = new System.Drawing.Size(512, 376);
+            tabPageCadastro.Size = new System.Drawing.Size(399, 345);
             tabPageCadastro.TabIndex = 0;
             tabPageCadastro.Text = "Cadastro";
             tabPageCadastro.UseVisualStyleBackColor = true;
@@ -80,20 +80,21 @@
             panel1.Controls.Add(btnCancelar);
             panel1.Controls.Add(btnSalvar);
             panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            panel1.Location = new System.Drawing.Point(3, 317);
+            panel1.Location = new System.Drawing.Point(3, 286);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(506, 56);
+            panel1.Size = new System.Drawing.Size(393, 56);
             panel1.TabIndex = 0;
             // 
             // btnCancelar
             // 
+            btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             btnCancelar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             btnCancelar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
             btnCancelar.Depth = 0;
             btnCancelar.HighEmphasis = true;
             btnCancelar.Icon = null;
             btnCancelar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnCancelar.Location = new System.Drawing.Point(306, 14);
+            btnCancelar.Location = new System.Drawing.Point(190, 14);
             btnCancelar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             btnCancelar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnCancelar.Name = "btnCancelar";
@@ -108,13 +109,14 @@
             // 
             // btnSalvar
             // 
+            btnSalvar.Anchor = System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right;
             btnSalvar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             btnSalvar.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
             btnSalvar.Depth = 0;
             btnSalvar.HighEmphasis = true;
             btnSalvar.Icon = null;
             btnSalvar.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnSalvar.Location = new System.Drawing.Point(419, 14);
+            btnSalvar.Location = new System.Drawing.Point(303, 14);
             btnSalvar.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             btnSalvar.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
             btnSalvar.Name = "btnSalvar";
@@ -236,7 +238,7 @@
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackColor = System.Drawing.SystemColors.MenuHighlight;
-            ClientSize = new System.Drawing.Size(526, 478);
+            ClientSize = new System.Drawing.Size(413, 447);
             Controls.Add(materialTabControl);
             DrawerTabControl = materialTabControl;
             Name = "CadastroBase";

@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
+using System.Xml.Linq;
 
 namespace CancelaIFSP.App.Cadastros
 {
@@ -24,23 +25,30 @@ namespace CancelaIFSP.App.Cadastros
 
         private void PreencheObjeto(Carro carro)
         {
-            
+            carro.Modelo = txtModelo.Text;
+            carro.Placa = txtPlaca.Text;
+            carro.Cor = txtCor.Text;
+
+            if (int.TryParse(txtAno.Text, out var ano))
+            {
+                carro.Ano = ano;
+            }
         }
-        
+
         protected override void Salvar()
         {
             try
             {
                 if (IsAlteracao)
                 {
-                    /*
+                    
                     if (int.TryParse(txtId.Text, out var id))
                     {
                         var carro = _carroService.GetById<Carro>(id);
                         PreencheObjeto(carro);
                         carro = _carroService.Update<Carro, Carro, CarroValidator>(carro);
                     }
-                    */
+                    
                 }
                 else
                 {
@@ -79,7 +87,16 @@ namespace CancelaIFSP.App.Cadastros
 
         protected override void CarregaRegistro(DataGridViewRow linha)
         {
-            
+            txtId.Text = linha?.Cells["Id"].Value.ToString();
+            txtModelo.Text = linha?.Cells["Nome"].Value.ToString();
+            txtPlaca.Text = linha?.Cells["Descricao"].Value.ToString();
+            txtCor.Text = linha?.Cells["TempoDuracao"].Value.ToString();
+            txtAno.Text = linha?.Cells["Endereco"].Value.ToString();
+        }
+
+        private void materialTextBoxEdit4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

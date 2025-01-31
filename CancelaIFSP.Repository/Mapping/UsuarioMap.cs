@@ -32,6 +32,8 @@ namespace CancelaIFSP.Repository.Mapping
             builder.Property(prop => prop.Categoria)
                 .IsRequired()
                 .HasColumnType("varchar(50)");
+
+            builder.HasMany(prop => prop.Carros);
         }
     }
 }

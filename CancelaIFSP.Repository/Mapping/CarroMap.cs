@@ -25,7 +25,6 @@ namespace CancelaIFSP.Repository.Mapping
                 .IsRequired()
                 .HasColumnType("varchar(20)");
 
-            builder.HasMany(prop => prop.Usuarios);
         }
     }
 }

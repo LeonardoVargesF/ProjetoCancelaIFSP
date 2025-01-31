@@ -12,7 +12,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.VisualBasic.Logging;
 
 
-namespace GerEventos.App.Infra
+namespace CancelaIFSP.App.Infra
 {
     [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     public static class ConfigureDI
@@ -57,7 +57,7 @@ namespace GerEventos.App.Infra
             Services.AddTransient<CadastroCarro, CadastroCarro>();
             Services.AddTransient<CadastroUsuario, CadastroUsuario>();
             Services.AddTransient<CadastroTag, CadastroTag>();
-
+            Services.AddTransient<CadastroUsuarioCarro, CadastroUsuarioCarro>();
 
             // Mapping
             Services.AddSingleton(new MapperConfiguration(config =>
