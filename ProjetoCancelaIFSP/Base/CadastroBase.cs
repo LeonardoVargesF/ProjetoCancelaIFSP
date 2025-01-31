@@ -5,7 +5,6 @@ using System;
 
 namespace CancelaIFSP.App.Base
 {
-    [System.Runtime.Versioning.SupportedOSPlatform("windows")]
     public partial class CadastroBase : MaterialForm
     {
         #region Declarações

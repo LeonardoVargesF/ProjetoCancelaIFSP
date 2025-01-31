@@ -28,10 +28,27 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Text = "CadastroCarro";
+            materialTabControl.SuspendLayout();
+            SuspendLayout();
+            // 
+            // materialTabControl
+            // 
+            materialTabControl.Size = new System.Drawing.Size(524, 393);
+            // 
+            // tabPageCadastro
+            // 
+            tabPageCadastro.Size = new System.Drawing.Size(516, 358);
+            // 
+            // CadastroCarro
+            // 
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            ClientSize = new System.Drawing.Size(530, 460);
+            Location = new System.Drawing.Point(0, 0);
+            Name = "CadastroCarro";
+            Text = "CadastroCarro";
+            materialTabControl.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

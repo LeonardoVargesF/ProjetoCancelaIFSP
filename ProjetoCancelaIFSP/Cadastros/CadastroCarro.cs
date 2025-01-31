@@ -33,12 +33,14 @@ namespace CancelaIFSP.App.Cadastros
             {
                 if (IsAlteracao)
                 {
+                    /*
                     if (int.TryParse(txtId.Text, out var id))
                     {
                         var carro = _carroService.GetById<Carro>(id);
                         PreencheObjeto(carro);
                         carro = _carroService.Update<Carro, Carro, CarroValidator>(carro);
                     }
+                    */
                 }
                 else
                 {
@@ -52,7 +54,7 @@ namespace CancelaIFSP.App.Cadastros
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"IFSP", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         protected override void Deletar(int id)
@@ -63,7 +65,7 @@ namespace CancelaIFSP.App.Cadastros
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message, @"IFSP Store", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message, @"IFSP", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
