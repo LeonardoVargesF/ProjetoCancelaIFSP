@@ -39,7 +39,7 @@
             // 
             // materialTabControl
             // 
-            materialTabControl.Size = new System.Drawing.Size(256, 316);
+            materialTabControl.Size = new System.Drawing.Size(279, 318);
             // 
             // tabPageCadastro
             // 
@@ -48,7 +48,7 @@
             tabPageCadastro.Controls.Add(txtCor);
             tabPageCadastro.Controls.Add(txtPlaca);
             tabPageCadastro.Controls.Add(txtModelo);
-            tabPageCadastro.Size = new System.Drawing.Size(248, 281);
+            tabPageCadastro.Size = new System.Drawing.Size(271, 283);
             tabPageCadastro.Controls.SetChildIndex(txtModelo, 0);
             tabPageCadastro.Controls.SetChildIndex(txtPlaca, 0);
             tabPageCadastro.Controls.SetChildIndex(txtCor, 0);
@@ -65,6 +65,7 @@
             txtModelo.Depth = 0;
             txtModelo.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             txtModelo.HideSelection = true;
+            txtModelo.Hint = "Modelo do Veiculo";
             txtModelo.LeadingIcon = null;
             txtModelo.Location = new System.Drawing.Point(6, 6);
             txtModelo.MaxLength = 32767;
@@ -81,7 +82,6 @@
             txtModelo.Size = new System.Drawing.Size(234, 48);
             txtModelo.TabIndex = 1;
             txtModelo.TabStop = false;
-            txtModelo.Text = "Modelo do Carro";
             txtModelo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             txtModelo.TrailingIcon = null;
             txtModelo.UseSystemPasswordChar = false;
@@ -96,6 +96,7 @@
             txtPlaca.Depth = 0;
             txtPlaca.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             txtPlaca.HideSelection = true;
+            txtPlaca.Hint = "Placa";
             txtPlaca.LeadingIcon = null;
             txtPlaca.Location = new System.Drawing.Point(6, 60);
             txtPlaca.MaxLength = 32767;
@@ -112,7 +113,6 @@
             txtPlaca.Size = new System.Drawing.Size(234, 48);
             txtPlaca.TabIndex = 2;
             txtPlaca.TabStop = false;
-            txtPlaca.Text = "Placa";
             txtPlaca.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             txtPlaca.TrailingIcon = null;
             txtPlaca.UseSystemPasswordChar = false;
@@ -127,6 +127,7 @@
             txtCor.Depth = 0;
             txtCor.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             txtCor.HideSelection = true;
+            txtCor.Hint = "Cor";
             txtCor.LeadingIcon = null;
             txtCor.Location = new System.Drawing.Point(6, 114);
             txtCor.MaxLength = 32767;
@@ -143,7 +144,6 @@
             txtCor.Size = new System.Drawing.Size(178, 48);
             txtCor.TabIndex = 3;
             txtCor.TabStop = false;
-            txtCor.Text = "Cor";
             txtCor.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             txtCor.TrailingIcon = null;
             txtCor.UseSystemPasswordChar = false;
@@ -158,6 +158,7 @@
             txtAno.Depth = 0;
             txtAno.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             txtAno.HideSelection = true;
+            txtAno.Hint = "Ano";
             txtAno.LeadingIcon = null;
             txtAno.Location = new System.Drawing.Point(6, 168);
             txtAno.MaxLength = 32767;
@@ -174,7 +175,6 @@
             txtAno.Size = new System.Drawing.Size(234, 48);
             txtAno.TabIndex = 4;
             txtAno.TabStop = false;
-            txtAno.Text = "Ano";
             txtAno.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             txtAno.TrailingIcon = null;
             txtAno.UseSystemPasswordChar = false;
@@ -190,6 +190,7 @@
             txtId.Depth = 0;
             txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             txtId.HideSelection = true;
+            txtId.Hint = "ID";
             txtId.LeadingIcon = null;
             txtId.Location = new System.Drawing.Point(190, 114);
             txtId.MaxLength = 32767;
@@ -206,7 +207,6 @@
             txtId.Size = new System.Drawing.Size(50, 48);
             txtId.TabIndex = 5;
             txtId.TabStop = false;
-            txtId.Text = "ID";
             txtId.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             txtId.TrailingIcon = null;
             txtId.UseSystemPasswordChar = false;
@@ -215,10 +215,10 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(262, 383);
+            ClientSize = new System.Drawing.Size(285, 385);
             Location = new System.Drawing.Point(0, 0);
             Name = "CadastroCarro";
-            Text = "CadastroCarro";
+            Text = "Cadastro Veiculo";
             materialTabControl.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
             ResumeLayout(false);

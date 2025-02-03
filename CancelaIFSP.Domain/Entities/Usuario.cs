@@ -14,18 +14,20 @@ namespace CancelaIFSP.Domain.Entities
             Carros = new List<UsuarioCarro>();
         }
 
-        public Usuario(int id, string? nome, string? cpf, string? matricula, string? categoria, List<UsuarioCarro> carros) : base(id)
+        public Usuario(int id, string? nome, string? cpf, string? matricula, string? categoria,string? tag, List<UsuarioCarro> carros) : base(id)
         {
             Nome = nome;
             CPF = cpf;
             Matricula = matricula;
             Categoria = categoria;
+            Tag = tag;
             Carros = carros;
         }
         public string? Nome { get; set; }
         public string? CPF { get; set; }
         public string? Matricula { get; set; }
         public string? Categoria { get; set; }
+        public string? Tag { get; set; }
         public List<UsuarioCarro> Carros { get; set; }
 
     }

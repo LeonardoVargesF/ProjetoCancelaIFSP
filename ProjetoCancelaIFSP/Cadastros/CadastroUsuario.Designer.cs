@@ -33,6 +33,7 @@
             txtMatricula = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboCategoria = new ReaLTaiizor.Controls.MaterialComboBox();
+            txtTag = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             materialTabControl.SuspendLayout();
             tabPageCadastro.SuspendLayout();
             SuspendLayout();
@@ -43,6 +44,7 @@
             // 
             // tabPageCadastro
             // 
+            tabPageCadastro.Controls.Add(txtTag);
             tabPageCadastro.Controls.Add(cboCategoria);
             tabPageCadastro.Controls.Add(txtId);
             tabPageCadastro.Controls.Add(txtMatricula);
@@ -54,6 +56,7 @@
             tabPageCadastro.Controls.SetChildIndex(txtMatricula, 0);
             tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             tabPageCadastro.Controls.SetChildIndex(cboCategoria, 0);
+            tabPageCadastro.Controls.SetChildIndex(txtTag, 0);
             // 
             // txtNome
             // 
@@ -63,8 +66,9 @@
             txtNome.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             txtNome.Depth = 0;
-            txtNome.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             txtNome.HideSelection = true;
+            txtNome.Hint = "Nome";
             txtNome.LeadingIcon = null;
             txtNome.Location = new System.Drawing.Point(6, 6);
             txtNome.MaxLength = 32767;
@@ -81,10 +85,10 @@
             txtNome.Size = new System.Drawing.Size(250, 48);
             txtNome.TabIndex = 1;
             txtNome.TabStop = false;
-            txtNome.Text = "Nome";
             txtNome.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             txtNome.TrailingIcon = null;
             txtNome.UseSystemPasswordChar = false;
+            txtNome.Click += txtNome_Click;
             // 
             // txtCPF
             // 
@@ -94,8 +98,9 @@
             txtCPF.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             txtCPF.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             txtCPF.Depth = 0;
-            txtCPF.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            txtCPF.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             txtCPF.HideSelection = true;
+            txtCPF.Hint = "CPF";
             txtCPF.LeadingIcon = null;
             txtCPF.Location = new System.Drawing.Point(6, 60);
             txtCPF.MaxLength = 32767;
@@ -112,11 +117,9 @@
             txtCPF.Size = new System.Drawing.Size(199, 48);
             txtCPF.TabIndex = 2;
             txtCPF.TabStop = false;
-            txtCPF.Text = "CPF";
             txtCPF.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             txtCPF.TrailingIcon = null;
             txtCPF.UseSystemPasswordChar = false;
-
             // 
             // txtMatricula
             // 
@@ -126,8 +129,9 @@
             txtMatricula.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             txtMatricula.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             txtMatricula.Depth = 0;
-            txtMatricula.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            txtMatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             txtMatricula.HideSelection = true;
+            txtMatricula.Hint = "Matrícula";
             txtMatricula.LeadingIcon = null;
             txtMatricula.Location = new System.Drawing.Point(6, 114);
             txtMatricula.MaxLength = 32767;
@@ -141,10 +145,9 @@
             txtMatricula.SelectionLength = 0;
             txtMatricula.SelectionStart = 0;
             txtMatricula.ShortcutsEnabled = true;
-            txtMatricula.Size = new System.Drawing.Size(250, 48);
+            txtMatricula.Size = new System.Drawing.Size(156, 48);
             txtMatricula.TabIndex = 3;
             txtMatricula.TabStop = false;
-            txtMatricula.Text = "Matrícula";
             txtMatricula.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             txtMatricula.TrailingIcon = null;
             txtMatricula.UseSystemPasswordChar = false;
@@ -157,7 +160,7 @@
             txtId.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             txtId.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
             txtId.Depth = 0;
-            txtId.Font = new System.Drawing.Font("Roboto", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             txtId.HideSelection = true;
             txtId.LeadingIcon = null;
             txtId.Location = new System.Drawing.Point(211, 60);
@@ -189,9 +192,10 @@
             cboCategoria.DropDownHeight = 174;
             cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             cboCategoria.DropDownWidth = 121;
-            cboCategoria.Font = new System.Drawing.Font("Roboto Medium", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
+            cboCategoria.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Pixel);
             cboCategoria.ForeColor = System.Drawing.Color.FromArgb(222, 0, 0, 0);
             cboCategoria.FormattingEnabled = true;
+            cboCategoria.Hint = "Categoria";
             cboCategoria.IntegralHeight = false;
             cboCategoria.ItemHeight = 43;
             cboCategoria.Items.AddRange(new object[] { "", "Estudante", "Servidor", "Professor" });
@@ -203,6 +207,37 @@
             cboCategoria.StartIndex = 0;
             cboCategoria.TabIndex = 5;
             // 
+            // txtTag
+            // 
+            txtTag.AnimateReadOnly = false;
+            txtTag.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            txtTag.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            txtTag.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            txtTag.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            txtTag.Depth = 0;
+            txtTag.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
+            txtTag.HideSelection = true;
+            txtTag.Hint = "Tag";
+            txtTag.LeadingIcon = null;
+            txtTag.Location = new System.Drawing.Point(168, 114);
+            txtTag.MaxLength = 32767;
+            txtTag.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
+            txtTag.Name = "txtTag";
+            txtTag.PasswordChar = '\0';
+            txtTag.PrefixSuffixText = null;
+            txtTag.ReadOnly = false;
+            txtTag.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            txtTag.SelectedText = "";
+            txtTag.SelectionLength = 0;
+            txtTag.SelectionStart = 0;
+            txtTag.ShortcutsEnabled = true;
+            txtTag.Size = new System.Drawing.Size(87, 48);
+            txtTag.TabIndex = 6;
+            txtTag.TabStop = false;
+            txtTag.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            txtTag.TrailingIcon = null;
+            txtTag.UseSystemPasswordChar = false;
+            // 
             // CadastroUsuario
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -210,7 +245,7 @@
             ClientSize = new System.Drawing.Size(277, 382);
             Location = new System.Drawing.Point(0, 0);
             Name = "CadastroUsuario";
-            Text = "CadastroUsuario";
+            Text = "Cadastro Usuario";
             materialTabControl.ResumeLayout(false);
             tabPageCadastro.ResumeLayout(false);
             ResumeLayout(false);
@@ -223,5 +258,6 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtCPF;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
         private ReaLTaiizor.Controls.MaterialComboBox cboCategoria;
+        private ReaLTaiizor.Controls.MaterialTextBoxEdit txtTag;
     }
 }

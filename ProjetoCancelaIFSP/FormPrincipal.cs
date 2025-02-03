@@ -37,9 +37,9 @@ namespace ProjetoCancelaIFSP
             Exibeformulario<CadastroUsuario>();
         }
 
-        private void tagsToolStripMenuItem_Click(object sender, EventArgs e)
+        private void carroUsuárioToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Exibeformulario<CadastroTag>();
+            Exibeformulario<CadastroUsuarioCarro>();
         }
 
         private void Exibeformulario<TFormlario>() where TFormlario : Form
@@ -59,5 +59,6 @@ namespace ProjetoCancelaIFSP
                 e.Cancel = true;
             }
         }
+
     }
 }

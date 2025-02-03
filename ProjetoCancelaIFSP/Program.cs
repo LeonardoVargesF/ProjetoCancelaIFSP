@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CancelaIFSP.App.Infra;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -15,8 +16,8 @@ namespace ProjetoCancelaIFSP
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
+            ConfigureDI.ConfiguraServices();
+
             Application.Run(new FormPrincipal());
         }
     }

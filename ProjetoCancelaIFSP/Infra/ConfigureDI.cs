@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using AutoMapper;
 using CancelaIFSP.App.Cadastros;
 using CancelaIFSP.App.Models;
@@ -26,7 +27,9 @@ namespace CancelaIFSP.App.Infra
             Services = new ServiceCollection();
             Services.AddDbContext<MySqlContext>(options =>
             {
-                var strCon = File.ReadAllText("Config/DataBaseSettings.txt");
+                var strCon = File.ReadAllText("../../../Config/DatabaseSettings.txt");
+                options.LogTo(Console.WriteLine)
+                    .EnableSensitiveDataLogging();
                 options.UseQueryTrackingBehavior(QueryTrackingBehavior.NoTracking);
                 options.EnableSensitiveDataLogging();
 
@@ -42,13 +45,11 @@ namespace CancelaIFSP.App.Infra
             // Repositories
             Services.AddScoped<IBaseRepository<Usuario>, BaseRepository<Usuario>>();
             Services.AddScoped<IBaseRepository<Carro>, BaseRepository<Carro>>();
-            Services.AddScoped<IBaseRepository<Tag>, BaseRepository<Tag>>();
             Services.AddScoped<IBaseRepository<UsuarioCarro>, BaseRepository<UsuarioCarro>>();
 
             // Services
             Services.AddScoped<IBaseService<Usuario>, BaseService<Usuario>>();
             Services.AddScoped<IBaseService<Carro>, BaseService<Carro>>();
-            Services.AddScoped<IBaseService<Tag>, BaseService<Tag>>();
             Services.AddScoped<IBaseService<UsuarioCarro>, BaseService<UsuarioCarro>>();
 
 
@@ -56,7 +57,6 @@ namespace CancelaIFSP.App.Infra
 
             Services.AddTransient<CadastroCarro, CadastroCarro>();
             Services.AddTransient<CadastroUsuario, CadastroUsuario>();
-            Services.AddTransient<CadastroTag, CadastroTag>();
             Services.AddTransient<CadastroUsuarioCarro, CadastroUsuarioCarro>();
 
             // Mapping
@@ -65,9 +65,6 @@ namespace CancelaIFSP.App.Infra
                 config.CreateMap<Usuario, UsuarioModel>();
                 config.CreateMap<Carro, CarroModel>()
                     .ForMember(d => d.ModCorAno, d => d.MapFrom(x => $"{x.Modelo} {x.Cor} {x.Ano}"));
-                config.CreateMap<Tag, TagModel>()
-                    .ForMember(d => d.Usuario, d => d.MapFrom(x => $"{x.Usuario!.Nome}"))
-                    .ForMember(d => d.IdUsuario, d => d.MapFrom(x => x.Usuario!.Id));
                 config.CreateMap<UsuarioCarro, UsuarioCarroModel>()
                     .ForMember(d => d.Usuario, d => d.MapFrom(x => $"{x.Usuario!.Nome}"))
                     .ForMember(d => d.IdUsuario, d => d.MapFrom(x => $"{x.Usuario!.Id}"))

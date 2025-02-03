@@ -82,16 +82,16 @@ namespace CancelaIFSP.App.Cadastros
         {
             carros = _carroService.Get<Carro>().ToList();
             dataGridViewConsulta.DataSource = carros;
-            dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
+            dataGridViewConsulta.Columns["Modelo"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
         }
 
         protected override void CarregaRegistro(DataGridViewRow linha)
         {
             txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtModelo.Text = linha?.Cells["Nome"].Value.ToString();
-            txtPlaca.Text = linha?.Cells["Descricao"].Value.ToString();
-            txtCor.Text = linha?.Cells["TempoDuracao"].Value.ToString();
-            txtAno.Text = linha?.Cells["Endereco"].Value.ToString();
+            txtModelo.Text = linha?.Cells["Modelo"].Value.ToString();
+            txtPlaca.Text = linha?.Cells["Placa"].Value.ToString();
+            txtCor.Text = linha?.Cells["Cor"].Value.ToString();
+            txtAno.Text = linha?.Cells["Ano"].Value.ToString();
         }
 
         private void materialTextBoxEdit4_Click(object sender, EventArgs e)

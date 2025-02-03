@@ -32,7 +32,7 @@
             cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             carrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             usuariosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            tagsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            carroUsuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             menuStrip2.SuspendLayout();
             SuspendLayout();
@@ -49,7 +49,7 @@
             // 
             // cadastrosToolStripMenuItem
             // 
-            cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { carrosToolStripMenuItem, usuariosToolStripMenuItem, tagsToolStripMenuItem });
+            cadastrosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { carrosToolStripMenuItem, usuariosToolStripMenuItem, carroUsuárioToolStripMenuItem });
             cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
             cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             cadastrosToolStripMenuItem.Text = "&Cadastros";
@@ -58,7 +58,7 @@
             // 
             carrosToolStripMenuItem.Name = "carrosToolStripMenuItem";
             carrosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            carrosToolStripMenuItem.Text = "Carros";
+            carrosToolStripMenuItem.Text = "Veículos";
             carrosToolStripMenuItem.Click += carrosToolStripMenuItem_Click;
             // 
             // usuariosToolStripMenuItem
@@ -68,12 +68,12 @@
             usuariosToolStripMenuItem.Text = "Usuarios";
             usuariosToolStripMenuItem.Click += usuariosToolStripMenuItem_Click;
             // 
-            // tagsToolStripMenuItem
+            // carroUsuárioToolStripMenuItem
             // 
-            tagsToolStripMenuItem.Name = "tagsToolStripMenuItem";
-            tagsToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            tagsToolStripMenuItem.Text = "Tags";
-            tagsToolStripMenuItem.Click += tagsToolStripMenuItem_Click;
+            carroUsuárioToolStripMenuItem.Name = "carroUsuárioToolStripMenuItem";
+            carroUsuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            carroUsuárioToolStripMenuItem.Text = "Veículo e Usuário";
+            carroUsuárioToolStripMenuItem.Click += carroUsuárioToolStripMenuItem_Click;
             // 
             // sairToolStripMenuItem
             // 
@@ -91,6 +91,7 @@
             Name = "FormPrincipal";
             StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             Text = "IFSP - Birigui";
+            FormClosing += FormPrincipal_FormClosing_1;
             Load += Form1_Load;
             menuStrip2.ResumeLayout(false);
             menuStrip2.PerformLayout();
@@ -103,8 +104,8 @@
         private System.Windows.Forms.ToolStripMenuItem cadastrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem carrosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem usuariosToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tagsToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem sairToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem carroUsuárioToolStripMenuItem;
     }
 }
 

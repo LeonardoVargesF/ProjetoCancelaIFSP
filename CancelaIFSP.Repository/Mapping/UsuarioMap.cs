@@ -33,6 +33,10 @@ namespace CancelaIFSP.Repository.Mapping
                 .IsRequired()
                 .HasColumnType("varchar(50)");
 
+            builder.Property(prop => prop.Tag)
+                .IsRequired()
+                .HasColumnType("varchar(50)");
+
             builder.HasMany(prop => prop.Carros);
         }
     }

@@ -22,9 +22,6 @@
     <ProjectReference Include="..\CancelaIFSP.Service\CancelaIFSP.Service.csproj" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Outros\" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Update="Base\CadastroBase.cs">
       <SubType>Form</SubType>
     </Compile>

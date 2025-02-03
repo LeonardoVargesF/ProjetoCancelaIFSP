@@ -19,6 +19,9 @@ namespace CancelaIFSP.Service.Validators
             RuleFor(c => c.Categoria)
                 .NotEmpty().WithMessage("Por favor informe a categoria.")
                 .NotNull().WithMessage("Por favor informe a categoria.");
+            RuleFor(c => c.Tag)
+                .NotEmpty().WithMessage("Por favor informe a TAG.")
+                .NotNull().WithMessage("Por favor informe a TAG.");
         }
     }
 }

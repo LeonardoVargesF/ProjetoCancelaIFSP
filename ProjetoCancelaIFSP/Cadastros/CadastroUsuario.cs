@@ -33,6 +33,7 @@ namespace CancelaIFSP.App.Cadastros
             usuario.CPF = txtCPF.Text;
             usuario.Matricula = txtMatricula.Text;
             usuario.Categoria = cboCategoria.Text;
+            usuario.Tag = txtTag.Text;
         }
 
         protected override void Salvar()
@@ -91,8 +92,13 @@ namespace CancelaIFSP.App.Cadastros
             txtNome.Text = linha?.Cells["Nome"].Value.ToString();
             txtCPF.Text = linha?.Cells["CPF"].Value.ToString();
             txtMatricula.Text = linha?.Cells["Matricula"].Value.ToString();
+            txtTag.Text = linha?.Cells["Tag"].Value.ToString();
             cboCategoria.Text = linha?.Cells["Categoria"].Value.ToString();
         }
 
+        private void txtNome_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

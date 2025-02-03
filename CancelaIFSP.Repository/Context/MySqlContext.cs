@@ -13,7 +13,6 @@ namespace CancelaIFSP.Repository.Context
         }
 
         public DbSet<Carro>? Carro { get; set; }
-        public DbSet<Tag>? Tag { get; set; }
         public DbSet<Usuario>? Usuario { get; set; }
         public DbSet<UsuarioCarro>? UsuarioCarro { get; set; }
 
@@ -23,7 +22,6 @@ namespace CancelaIFSP.Repository.Context
         {
             base.OnModelCreating(modelBuilder);
             modelBuilder.Entity<Carro>(new CarroMap().Configure);
-            modelBuilder.Entity<Tag>(new TagMap().Configure);
             modelBuilder.Entity<Usuario>(new UsuarioMap().Configure);
             modelBuilder.Entity<UsuarioCarro>(new UsuarioCarroMap().Configure);
 
