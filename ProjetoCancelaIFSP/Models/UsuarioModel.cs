@@ -18,7 +18,7 @@ namespace CancelaIFSP.App.Models
         public string? CPF { get; set; }
         public string? Matricula { get; set; }
         public string? Categoria { get; set; }
-        public string? Tag {  get; set; }
+        public string? Embedding {  get; set; }
         public List<UsuarioCarro> Carros { get; set; }
 
     }

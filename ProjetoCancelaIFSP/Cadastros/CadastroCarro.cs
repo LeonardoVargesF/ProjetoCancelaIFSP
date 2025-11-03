@@ -14,12 +14,15 @@ namespace CancelaIFSP.App.Cadastros
     public partial class CadastroCarro : CadastroBase
     {
         private readonly IBaseService<Carro> _carroService;
+        private readonly IBaseService<UsuarioCarro> _usuariocarroService;
 
         private List<Carro> carros;
+        private List<UsuarioCarro> cadveiculos;
 
-        public CadastroCarro(IBaseService<Carro> carroService)
+        public CadastroCarro(IBaseService<Carro> carroService, IBaseService<UsuarioCarro> usuariocarroService)
         {
             _carroService = carroService;
+            _usuariocarroService = usuariocarroService;
             InitializeComponent();
         }
 
@@ -69,6 +72,14 @@ namespace CancelaIFSP.App.Cadastros
         {
             try
             {
+                var cadcarros = _usuariocarroService.Get<UsuarioCarro>(new List<string>() { "Usuario", "Carro" });
+                foreach (var cadcarro in cadcarros)
+                {
+                    if (cadcarro.Carro.Id == id)
+                    {
+                        _usuariocarroService.Delete(cadcarro.Id);
+                    }
+                }
                 _carroService.Delete(id);
             }
             catch (Exception ex)

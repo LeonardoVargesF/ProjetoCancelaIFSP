@@ -12,6 +12,7 @@ namespace CancelaIFSP.App.Models
         public string? Cor { get; set; }
         public int Ano { get; set; }
         public string? ModCorAno { get; set; }
+        public string PlacaNome => $"{Modelo} - {Placa}";
     }
 
 }

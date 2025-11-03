@@ -33,9 +33,9 @@ namespace CancelaIFSP.Repository.Mapping
                 .IsRequired()
                 .HasColumnType("varchar(50)");
 
-            builder.Property(prop => prop.Tag)
+            builder.Property(prop => prop.Embedding)
                 .IsRequired()
-                .HasColumnType("varchar(50)");
+                .HasColumnType("LONGTEXT");
 
             builder.HasMany(prop => prop.Carros);
         }
