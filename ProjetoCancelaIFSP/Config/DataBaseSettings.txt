@@ -1,1 +1,1 @@
-﻿Server=localhost;Port=3306;Database=CancelaIFSP;Uid=root
+﻿Server=localhost;Port=3306;Database=cancelaifsp;Uid=root

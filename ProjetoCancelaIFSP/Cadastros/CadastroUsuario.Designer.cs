@@ -29,45 +29,18 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(CadastroUsuario));
             txtNome = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtCPF = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtMatricula = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             cboCategoria = new ReaLTaiizor.Controls.MaterialComboBox();
-            cboVeiculos = new ReaLTaiizor.Controls.MaterialComboBox();
             pictureBox1 = new System.Windows.Forms.PictureBox();
             imageList1 = new System.Windows.Forms.ImageList(components);
-            btnCapture = new ReaLTaiizor.Controls.MaterialButton();
-            materialTabControl.SuspendLayout();
-            tabPageCadastro.SuspendLayout();
+            cboVeiculos = new ReaLTaiizor.Controls.MaterialComboBox();
+            btnCapture = new CustomControls.RJControls.RJButton();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             SuspendLayout();
-            // 
-            // materialTabControl
-            // 
-            materialTabControl.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
-            materialTabControl.Dock = System.Windows.Forms.DockStyle.None;
-            materialTabControl.Size = new System.Drawing.Size(444, 372);
-            // 
-            // tabPageCadastro
-            // 
-            tabPageCadastro.Controls.Add(btnCapture);
-            tabPageCadastro.Controls.Add(pictureBox1);
-            tabPageCadastro.Controls.Add(cboVeiculos);
-            tabPageCadastro.Controls.Add(cboCategoria);
-            tabPageCadastro.Controls.Add(txtId);
-            tabPageCadastro.Controls.Add(txtMatricula);
-            tabPageCadastro.Controls.Add(txtCPF);
-            tabPageCadastro.Controls.Add(txtNome);
-            tabPageCadastro.Size = new System.Drawing.Size(436, 337);
-            tabPageCadastro.Controls.SetChildIndex(txtNome, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtCPF, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtMatricula, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtId, 0);
-            tabPageCadastro.Controls.SetChildIndex(cboCategoria, 0);
-            tabPageCadastro.Controls.SetChildIndex(cboVeiculos, 0);
-            tabPageCadastro.Controls.SetChildIndex(pictureBox1, 0);
-            tabPageCadastro.Controls.SetChildIndex(btnCapture, 0);
             // 
             // txtNome
             // 
@@ -81,7 +54,7 @@
             txtNome.HideSelection = true;
             txtNome.Hint = "Nome";
             txtNome.LeadingIcon = null;
-            txtNome.Location = new System.Drawing.Point(6, 6);
+            txtNome.Location = new System.Drawing.Point(28, 28);
             txtNome.MaxLength = 32767;
             txtNome.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtNome.Name = "txtNome";
@@ -113,7 +86,7 @@
             txtCPF.HideSelection = true;
             txtCPF.Hint = "CPF";
             txtCPF.LeadingIcon = null;
-            txtCPF.Location = new System.Drawing.Point(6, 60);
+            txtCPF.Location = new System.Drawing.Point(28, 98);
             txtCPF.MaxLength = 32767;
             txtCPF.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtCPF.Name = "txtCPF";
@@ -134,7 +107,6 @@
             // 
             // txtMatricula
             // 
-            txtMatricula.Anchor = System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right;
             txtMatricula.AnimateReadOnly = false;
             txtMatricula.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             txtMatricula.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
@@ -145,7 +117,7 @@
             txtMatricula.HideSelection = true;
             txtMatricula.Hint = "Matrícula";
             txtMatricula.LeadingIcon = null;
-            txtMatricula.Location = new System.Drawing.Point(6, 114);
+            txtMatricula.Location = new System.Drawing.Point(28, 168);
             txtMatricula.MaxLength = 32767;
             txtMatricula.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtMatricula.Name = "txtMatricula";
@@ -157,7 +129,7 @@
             txtMatricula.SelectionLength = 0;
             txtMatricula.SelectionStart = 0;
             txtMatricula.ShortcutsEnabled = true;
-            txtMatricula.Size = new System.Drawing.Size(287, 48);
+            txtMatricula.Size = new System.Drawing.Size(250, 48);
             txtMatricula.TabIndex = 3;
             txtMatricula.TabStop = false;
             txtMatricula.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
@@ -175,7 +147,7 @@
             txtId.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
             txtId.HideSelection = true;
             txtId.LeadingIcon = null;
-            txtId.Location = new System.Drawing.Point(211, 60);
+            txtId.Location = new System.Drawing.Point(233, 98);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -211,13 +183,27 @@
             cboCategoria.IntegralHeight = false;
             cboCategoria.ItemHeight = 43;
             cboCategoria.Items.AddRange(new object[] { "", "Estudante", "Servidor", "Professor" });
-            cboCategoria.Location = new System.Drawing.Point(6, 168);
+            cboCategoria.Location = new System.Drawing.Point(28, 238);
             cboCategoria.MaxDropDownItems = 4;
             cboCategoria.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboCategoria.Name = "cboCategoria";
             cboCategoria.Size = new System.Drawing.Size(250, 49);
             cboCategoria.StartIndex = 0;
             cboCategoria.TabIndex = 5;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new System.Drawing.Point(312, 28);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new System.Drawing.Size(261, 252);
+            pictureBox1.TabIndex = 8;
+            pictureBox1.TabStop = false;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            imageList1.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // cboVeiculos
             // 
@@ -234,60 +220,57 @@
             cboVeiculos.Hint = "Veículo";
             cboVeiculos.IntegralHeight = false;
             cboVeiculos.ItemHeight = 43;
-            cboVeiculos.Location = new System.Drawing.Point(6, 223);
+            cboVeiculos.Items.AddRange(new object[] { "", "Estudante", "Servidor", "Professor" });
+            cboVeiculos.Location = new System.Drawing.Point(28, 308);
             cboVeiculos.MaxDropDownItems = 4;
             cboVeiculos.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             cboVeiculos.Name = "cboVeiculos";
             cboVeiculos.Size = new System.Drawing.Size(250, 49);
             cboVeiculos.StartIndex = 0;
-            cboVeiculos.TabIndex = 7;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new System.Drawing.Point(262, 6);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new System.Drawing.Size(169, 156);
-            pictureBox1.TabIndex = 8;
-            pictureBox1.TabStop = false;
-            // 
-            // imageList1
-            // 
-            imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
-            imageList1.ImageSize = new System.Drawing.Size(16, 16);
-            imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            cboVeiculos.TabIndex = 12;
             // 
             // btnCapture
             // 
-            btnCapture.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            btnCapture.Density = ReaLTaiizor.Controls.MaterialButton.MaterialButtonDensity.Default;
-            btnCapture.Depth = 0;
-            btnCapture.HighEmphasis = true;
-            btnCapture.Icon = null;
-            btnCapture.IconType = ReaLTaiizor.Controls.MaterialButton.MaterialIconType.Rebase;
-            btnCapture.Location = new System.Drawing.Point(302, 171);
-            btnCapture.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
-            btnCapture.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.HOVER;
+            btnCapture.BackColor = System.Drawing.Color.Gray;
+            btnCapture.BackgroundColor = System.Drawing.Color.Gray;
+            btnCapture.BorderColor = System.Drawing.Color.Black;
+            btnCapture.BorderRadius = 35;
+            btnCapture.BorderSize = 1;
+            btnCapture.FlatAppearance.BorderSize = 0;
+            btnCapture.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            btnCapture.ForeColor = System.Drawing.Color.White;
+            btnCapture.Image = (System.Drawing.Image)resources.GetObject("btnCapture.Image");
+            btnCapture.Location = new System.Drawing.Point(405, 287);
             btnCapture.Name = "btnCapture";
-            btnCapture.NoAccentTextColor = System.Drawing.Color.Empty;
-            btnCapture.Size = new System.Drawing.Size(86, 36);
-            btnCapture.TabIndex = 11;
-            btnCapture.Text = "Capture";
-            btnCapture.Type = ReaLTaiizor.Controls.MaterialButton.MaterialButtonType.Contained;
-            btnCapture.UseAccentColor = false;
-            btnCapture.UseVisualStyleBackColor = true;
-            btnCapture.Click += btnCapture_Click;
+            btnCapture.Size = new System.Drawing.Size(70, 70);
+            btnCapture.TabIndex = 13;
+            btnCapture.TextColor = System.Drawing.Color.White;
+            btnCapture.UseVisualStyleBackColor = false;
             // 
             // CadastroUsuario
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(450, 439);
-            Location = new System.Drawing.Point(0, 0);
+            ClientSize = new System.Drawing.Size(610, 437);
+            Controls.Add(btnCapture);
+            Controls.Add(cboVeiculos);
+            Controls.Add(pictureBox1);
+            Controls.Add(txtNome);
+            Controls.Add(cboCategoria);
+            Controls.Add(txtCPF);
+            Controls.Add(txtId);
+            Controls.Add(txtMatricula);
             Name = "CadastroUsuario";
             Text = "Cadastro Usuario";
-            materialTabControl.ResumeLayout(false);
-            tabPageCadastro.ResumeLayout(false);
-            tabPageCadastro.PerformLayout();
+            FormClosing += CadastroUsuario_FormClosing;
+            Controls.SetChildIndex(txtMatricula, 0);
+            Controls.SetChildIndex(txtId, 0);
+            Controls.SetChildIndex(txtCPF, 0);
+            Controls.SetChildIndex(cboCategoria, 0);
+            Controls.SetChildIndex(txtNome, 0);
+            Controls.SetChildIndex(pictureBox1, 0);
+            Controls.SetChildIndex(cboVeiculos, 0);
+            Controls.SetChildIndex(btnCapture, 0);
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ResumeLayout(false);
         }
@@ -299,10 +282,10 @@
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtCPF;
         private ReaLTaiizor.Controls.MaterialTextBoxEdit txtNome;
         private ReaLTaiizor.Controls.MaterialComboBox cboCategoria;
-        private ReaLTaiizor.Controls.MaterialComboBox cboVeiculos;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private ReaLTaiizor.Controls.MaterialButton btnCapture;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.ImageList imageList1;
+        private ReaLTaiizor.Controls.MaterialComboBox cboVeiculos;
+        private CustomControls.RJControls.RJButton btnCapture;
     }
 }

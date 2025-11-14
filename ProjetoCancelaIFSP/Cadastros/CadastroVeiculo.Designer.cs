@@ -1,6 +1,6 @@
 ﻿namespace CancelaIFSP.App.Cadastros
 {
-    partial class CadastroCarro
+    partial class CadastroVeiculo
     {
         /// <summary>
         /// Required designer variable.
@@ -33,27 +33,7 @@
             txtCor = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtAno = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
             txtId = new ReaLTaiizor.Controls.MaterialTextBoxEdit();
-            materialTabControl.SuspendLayout();
-            tabPageCadastro.SuspendLayout();
             SuspendLayout();
-            // 
-            // materialTabControl
-            // 
-            materialTabControl.Size = new System.Drawing.Size(279, 318);
-            // 
-            // tabPageCadastro
-            // 
-            tabPageCadastro.Controls.Add(txtId);
-            tabPageCadastro.Controls.Add(txtAno);
-            tabPageCadastro.Controls.Add(txtCor);
-            tabPageCadastro.Controls.Add(txtPlaca);
-            tabPageCadastro.Controls.Add(txtModelo);
-            tabPageCadastro.Size = new System.Drawing.Size(271, 283);
-            tabPageCadastro.Controls.SetChildIndex(txtModelo, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtPlaca, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtCor, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtAno, 0);
-            tabPageCadastro.Controls.SetChildIndex(txtId, 0);
             // 
             // txtModelo
             // 
@@ -67,7 +47,7 @@
             txtModelo.HideSelection = true;
             txtModelo.Hint = "Modelo do Veiculo";
             txtModelo.LeadingIcon = null;
-            txtModelo.Location = new System.Drawing.Point(6, 6);
+            txtModelo.Location = new System.Drawing.Point(28, 28);
             txtModelo.MaxLength = 32767;
             txtModelo.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtModelo.Name = "txtModelo";
@@ -98,7 +78,7 @@
             txtPlaca.HideSelection = true;
             txtPlaca.Hint = "Placa";
             txtPlaca.LeadingIcon = null;
-            txtPlaca.Location = new System.Drawing.Point(6, 60);
+            txtPlaca.Location = new System.Drawing.Point(28, 98);
             txtPlaca.MaxLength = 32767;
             txtPlaca.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtPlaca.Name = "txtPlaca";
@@ -129,7 +109,7 @@
             txtCor.HideSelection = true;
             txtCor.Hint = "Cor";
             txtCor.LeadingIcon = null;
-            txtCor.Location = new System.Drawing.Point(6, 114);
+            txtCor.Location = new System.Drawing.Point(28, 168);
             txtCor.MaxLength = 32767;
             txtCor.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtCor.Name = "txtCor";
@@ -160,7 +140,7 @@
             txtAno.HideSelection = true;
             txtAno.Hint = "Ano";
             txtAno.LeadingIcon = null;
-            txtAno.Location = new System.Drawing.Point(6, 168);
+            txtAno.Location = new System.Drawing.Point(28, 248);
             txtAno.MaxLength = 32767;
             txtAno.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtAno.Name = "txtAno";
@@ -178,7 +158,6 @@
             txtAno.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             txtAno.TrailingIcon = null;
             txtAno.UseSystemPasswordChar = false;
-            txtAno.Click += materialTextBoxEdit4_Click;
             // 
             // txtId
             // 
@@ -192,7 +171,7 @@
             txtId.HideSelection = true;
             txtId.Hint = "ID";
             txtId.LeadingIcon = null;
-            txtId.Location = new System.Drawing.Point(190, 114);
+            txtId.Location = new System.Drawing.Point(212, 168);
             txtId.MaxLength = 32767;
             txtId.MouseState = ReaLTaiizor.Helper.MaterialDrawHelper.MaterialMouseState.OUT;
             txtId.Name = "txtId";
@@ -215,12 +194,19 @@
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            ClientSize = new System.Drawing.Size(285, 385);
-            Location = new System.Drawing.Point(0, 0);
+            ClientSize = new System.Drawing.Size(520, 415);
+            Controls.Add(txtId);
+            Controls.Add(txtAno);
+            Controls.Add(txtPlaca);
+            Controls.Add(txtCor);
+            Controls.Add(txtModelo);
             Name = "CadastroCarro";
             Text = "Cadastro Veiculo";
-            materialTabControl.ResumeLayout(false);
-            tabPageCadastro.ResumeLayout(false);
+            Controls.SetChildIndex(txtModelo, 0);
+            Controls.SetChildIndex(txtCor, 0);
+            Controls.SetChildIndex(txtPlaca, 0);
+            Controls.SetChildIndex(txtAno, 0);
+            Controls.SetChildIndex(txtId, 0);
             ResumeLayout(false);
         }
 

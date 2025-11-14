@@ -57,7 +57,7 @@ namespace CancelaIFSP.App.Cadastros
             usuario.Nome = txtNome.Text;
             usuario.CPF = txtCPF.Text;
             usuario.Matricula = txtMatricula.Text;
-            usuario.Embedding = embedding; // Recebe embedding gerado
+            usuario.Embedding = embedding;
             usuario.Categoria = cboCategoria.Text;
         }
 
@@ -104,7 +104,6 @@ namespace CancelaIFSP.App.Cadastros
                     }
                 }
 
-                materialTabControl.SelectedIndex = 1;
             }
             catch (Exception ex)
             {
@@ -112,42 +111,7 @@ namespace CancelaIFSP.App.Cadastros
             }
         }
 
-        protected override void Deletar(int id)
-        {
-            try
-            {
-                var cadcarros = _usuariocarroService.Get<UsuarioCarro>(new List<string>() { "Usuario", "Carro" });
-                foreach (var cadcarro in cadcarros)
-                {
-                    if (cadcarro.Usuario.Id == id)
-                    {
-                        _usuariocarroService.Delete(cadcarro.Id);
-                    }
-                }
 
-                _usuarioService.Delete(id);
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, @"IFSP", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-
-        protected override void CarregaGrid()
-        {
-            usuarios = _usuarioService.Get<Usuario>().ToList();
-            dataGridViewConsulta.DataSource = usuarios;
-            dataGridViewConsulta.Columns["Nome"]!.AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill;
-        }
-
-        protected override void CarregaRegistro(DataGridViewRow linha)
-        {
-            txtId.Text = linha?.Cells["Id"].Value.ToString();
-            txtNome.Text = linha?.Cells["Nome"].Value.ToString();
-            txtCPF.Text = linha?.Cells["CPF"].Value.ToString();
-            txtMatricula.Text = linha?.Cells["Matricula"].Value.ToString();
-            cboCategoria.Text = linha?.Cells["Categoria"].Value.ToString();
-        }
 
         private void txtNome_Click(object sender, EventArgs e) { }
 
@@ -242,5 +206,27 @@ namespace CancelaIFSP.App.Cadastros
             string embedding = await SalvarFotoAsync();
             MessageBox.Show("Embedding gerado com sucesso!");
         }
+
+        private void StopCamera()
+        {
+            if (videoCapture != null && videoCapture.IsRunning)
+            {
+                videoCapture.NewFrame -= Camera_On;
+                videoCapture.SignalToStop();
+                videoCapture.WaitForStop();
+                videoCapture = null;
+            }
+        }
+
+        private void CadastroUsuario_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            StopCamera();
+        }
+
+        private void materialTabControl_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }

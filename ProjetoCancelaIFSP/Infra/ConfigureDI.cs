@@ -55,9 +55,11 @@ namespace CancelaIFSP.App.Infra
 
             // Formulários
 
-            Services.AddTransient<CadastroCarro, CadastroCarro>();
+            Services.AddTransient<CadastroVeiculo, CadastroVeiculo>();
             Services.AddTransient<CadastroUsuario, CadastroUsuario>();
             Services.AddTransient<CadastroUsuarioCarro, CadastroUsuarioCarro>();
+            Services.AddTransient<RelatorioVeiculo, RelatorioVeiculo>();
+            Services.AddTransient<RelatorioUsuario, RelatorioUsuario>();
 
             // Mapping
             Services.AddSingleton(new MapperConfiguration(config =>
