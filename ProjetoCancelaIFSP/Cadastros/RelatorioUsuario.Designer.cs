@@ -136,7 +136,7 @@
             ClientSize = new System.Drawing.Size(652, 470);
             Controls.Add(tabControl1);
             Name = "RelatorioUsuario";
-            Text = "RelatorioUsuario";
+            Text = "Relatorio Usuário";
             Load += RelatorioUsuario_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

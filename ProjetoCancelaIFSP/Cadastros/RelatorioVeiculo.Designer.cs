@@ -151,7 +151,7 @@ namespace CancelaIFSP.App.Cadastros
             tabPageCadastro.Location = new System.Drawing.Point(4, 5);
             tabPageCadastro.Name = "tabPageCadastro";
             tabPageCadastro.Padding = new Padding(3);
-            tabPageCadastro.Size = new System.Drawing.Size(459, 424);
+            tabPageCadastro.Size = new System.Drawing.Size(635, 429);
             tabPageCadastro.TabIndex = 1;
             tabPageCadastro.Text = "tabPage2";
             tabPageCadastro.UseVisualStyleBackColor = true;
@@ -163,9 +163,9 @@ namespace CancelaIFSP.App.Cadastros
             panel1.Controls.Add(btnSalvar);
             panel1.Controls.Add(btnCancelar);
             panel1.Dock = DockStyle.Bottom;
-            panel1.Location = new System.Drawing.Point(3, 364);
+            panel1.Location = new System.Drawing.Point(3, 369);
             panel1.Name = "panel1";
-            panel1.Size = new System.Drawing.Size(453, 57);
+            panel1.Size = new System.Drawing.Size(629, 57);
             panel1.TabIndex = 11;
             // 
             // btnSalvar2
@@ -181,7 +181,7 @@ namespace CancelaIFSP.App.Cadastros
             btnSalvar2.FlatStyle = FlatStyle.Flat;
             btnSalvar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnSalvar2.ForeColor = System.Drawing.Color.White;
-            btnSalvar2.Location = new System.Drawing.Point(368, 17);
+            btnSalvar2.Location = new System.Drawing.Point(544, 17);
             btnSalvar2.Name = "btnSalvar2";
             btnSalvar2.Size = new System.Drawing.Size(80, 40);
             btnSalvar2.TabIndex = 2;
@@ -202,7 +202,7 @@ namespace CancelaIFSP.App.Cadastros
             btnCancelar2.FlatStyle = FlatStyle.Flat;
             btnCancelar2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnCancelar2.ForeColor = System.Drawing.Color.White;
-            btnCancelar2.Location = new System.Drawing.Point(262, 17);
+            btnCancelar2.Location = new System.Drawing.Point(438, 17);
             btnCancelar2.Name = "btnCancelar2";
             btnCancelar2.Size = new System.Drawing.Size(100, 40);
             btnCancelar2.TabIndex = 3;
@@ -224,7 +224,7 @@ namespace CancelaIFSP.App.Cadastros
             btnSalvar.FlatStyle = FlatStyle.Flat;
             btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnSalvar.ForeColor = System.Drawing.Color.White;
-            btnSalvar.Location = new System.Drawing.Point(656, -31);
+            btnSalvar.Location = new System.Drawing.Point(832, -31);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.Size = new System.Drawing.Size(80, 40);
             btnSalvar.TabIndex = 1;
@@ -244,7 +244,7 @@ namespace CancelaIFSP.App.Cadastros
             btnCancelar.FlatStyle = FlatStyle.Flat;
             btnCancelar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0);
             btnCancelar.ForeColor = System.Drawing.Color.White;
-            btnCancelar.Location = new System.Drawing.Point(550, -31);
+            btnCancelar.Location = new System.Drawing.Point(726, -31);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.Size = new System.Drawing.Size(100, 40);
             btnCancelar.TabIndex = 1;
@@ -414,7 +414,7 @@ namespace CancelaIFSP.App.Cadastros
             ClientSize = new System.Drawing.Size(643, 438);
             Controls.Add(tabControl);
             Name = "RelatorioVeiculo";
-            Text = "Relatorio";
+            Text = "Relatorio Usuário";
             ((System.ComponentModel.ISupportInitialize)dataGridViewConsulta).EndInit();
             tabControl.ResumeLayout(false);
             tabPageRelatorio.ResumeLayout(false);

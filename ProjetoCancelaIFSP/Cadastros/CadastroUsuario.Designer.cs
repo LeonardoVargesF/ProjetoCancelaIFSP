@@ -246,6 +246,7 @@
             btnCapture.TabIndex = 13;
             btnCapture.TextColor = System.Drawing.Color.White;
             btnCapture.UseVisualStyleBackColor = false;
+            btnCapture.Click += btnCapture_Click_1;
             // 
             // CadastroUsuario
             // 

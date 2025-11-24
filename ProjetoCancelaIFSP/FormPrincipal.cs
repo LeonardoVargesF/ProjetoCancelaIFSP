@@ -1,6 +1,4 @@
-﻿using AForge.Video;
-using AForge.Video.DirectShow;
-using CancelaIFSP.App.Cadastros;
+﻿using CancelaIFSP.App.Cadastros;
 using CancelaIFSP.App.Infra;
 using CancelaIFSP.App.Outros;
 using CancelaIFSP.Domain.Entities;
@@ -15,6 +13,8 @@ using System.Net.Http.Headers;
 using System.Runtime.InteropServices;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OpenCvSharp;
+using System.Threading;
 
 
 
@@ -24,23 +24,16 @@ namespace ProjetoCancelaIFSP
     public partial class FormPrincipal : Form
     {
         private Button currentButton;
-        private Random random;
-        private int tempIndex;
-        private Timer timer;
-        private VideoCaptureDevice videoCapture;
-        private FilterInfoCollection filterInfo;
-        private Bitmap frameOriginal;
-        private bool estaEnviandoImagem = false;
-        private readonly object frameLock = new object();
         private Form formAtivo;
+        private bool isRunning = true;
+        VideoCapture _capture = new VideoCapture(0);
+        Mat _image = new Mat();
+        Thread thread;
+
         public FormPrincipal()
         {
             InitializeComponent();
-            startCamera();
-            timer = new Timer();
-            timer.Interval = 2000;
-            timer.Tick += new EventHandler(Timer_Tick);
-            timer.Start();
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
             btnCloseForm.Visible = false;
             this.Text = string.Empty;
             this.ControlBox = false;
@@ -69,6 +62,54 @@ namespace ProjetoCancelaIFSP
             }
         }
 
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            thread = new Thread(CaptureVideo);
+            thread.IsBackground = true;
+            thread.Start();
+        }
+
+        private void FormPrincipal_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            isRunning = false;
+            if (thread != null && thread.IsAlive)
+            {
+                thread.Join(1000);
+            }
+
+            _capture?.Dispose();
+        }
+
+        public void CaptureVideo()
+        {
+            while (isRunning)
+            {
+                _capture.Read(_image);
+
+                if (_image == null || _image.Empty())
+                    continue;
+
+                var bmp = OpenCvSharp.Extensions.BitmapConverter.ToBitmap(_image);
+
+                if (pictureBox1.InvokeRequired)
+                {
+                    pictureBox1.Invoke(new Action(() =>
+                    {
+                        pictureBox1.Image?.Dispose();
+                        pictureBox1.Image = bmp;
+                    }));
+                }
+                else
+                {
+                    pictureBox1.Image?.Dispose();
+                    pictureBox1.Image = bmp;
+                }
+            }
+        }
+
+
+
+
         private void DisableButton()
         {
             foreach (Control previousBtn in panelMenu.Controls)
@@ -83,114 +124,12 @@ namespace ProjetoCancelaIFSP
             }
         }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
 
         private void menuStrip2_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
 
         }
 
-        
-
-
-        private void startCamera()
-        {
-            try
-            {
-                filterInfo = new FilterInfoCollection(FilterCategory.VideoInputDevice);
-                videoCapture = new VideoCaptureDevice(filterInfo[0].MonikerString);
-                videoCapture.NewFrame += new NewFrameEventHandler(Camera_On);
-                videoCapture.Start();
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("Erro ao iniciar câmera: " + e.Message);
-            }
-        }
-        private void Camera_On(object sender, NewFrameEventArgs eventArgs)
-        {
-            Bitmap frame = (Bitmap)eventArgs.Frame.Clone();
-
-            frameOriginal?.Dispose();
-            frameOriginal = (Bitmap)frame.Clone();
-
-            if (pictureBox1.Width <= 0 || pictureBox1.Height <= 0)
-            {
-                eventArgs.Frame.Dispose();
-                return;
-            }
-
-            Bitmap resized = new Bitmap(pictureBox1.Width, pictureBox1.Height);
-
-            using (Graphics g = Graphics.FromImage(resized))
-            {
-                g.InterpolationMode = System.Drawing.Drawing2D.InterpolationMode.HighQualityBicubic;
-                g.DrawImage(frame, 0, 0, pictureBox1.Width, pictureBox1.Height);
-            }
-
-            pictureBox1.Image?.Dispose();
-            pictureBox1.Image = resized;
-
-            frame.Dispose();
-        }
-        private async Task<string> EnviarImagemAsync(byte[] imagemBytes)
-        {
-            using var client = new HttpClient();
-            using var form = new MultipartFormDataContent();
-
-            var content = new ByteArrayContent(imagemBytes);
-            content.Headers.ContentType = new MediaTypeHeaderValue("image/jpeg");
-            form.Add(content, "file", "imagem.jpg");
-
-            var response = await client.PostAsync("http://127.0.0.1:8000/detectar_rosto", form);
-            response.EnsureSuccessStatusCode();
-
-            return await response.Content.ReadAsStringAsync();
-        }
-
-        byte[] ImageToBytes(Image image)
-        {
-            using var ms = new MemoryStream();
-            image.Save(ms, ImageFormat.Jpeg);
-            return ms.ToArray();
-        }
-
-        private async void Timer_Tick(object sender, EventArgs e)
-        {
-            timer.Stop();
-
-            try
-            {
-                Bitmap frameParaEnviar = null;
-                lock (frameLock)
-                {
-                    if (frameOriginal != null)
-                    {
-                        frameParaEnviar = (Bitmap)frameOriginal.Clone();
-                    }
-                }
-
-                if (frameParaEnviar != null)
-                {
-                    byte[] frameBytes = ImageToBytes(frameParaEnviar);
-                    string resposta = await EnviarImagemAsync(frameBytes);
-
-
-                    frameParaEnviar.Dispose();
-                }
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("Erro ao enviar imagem: " + ex.Message);
-            }
-            finally
-            {
-                timer.Start();
-            }
-        }
 
         private void AbrirFormularioNoPainel<TFormlario>(object btnSender) where TFormlario : Form
         {

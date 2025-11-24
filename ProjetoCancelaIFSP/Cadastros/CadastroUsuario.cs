@@ -201,7 +201,7 @@ namespace CancelaIFSP.App.Cadastros
             frame.Dispose();
         }
 
-        private async void btnCapture_Click(object sender, EventArgs e)
+        private async void btnCapture_Click_1(object sender, EventArgs e)
         {
             string embedding = await SalvarFotoAsync();
             MessageBox.Show("Embedding gerado com sucesso!");

@@ -118,7 +118,7 @@ namespace CancelaIFSP.App.Cadastros
             }
             else
             {
-                MessageBox.Show(@"Selecione algum registro!", @"GEREVENTOS", MessageBoxButtons.OK,
+                MessageBox.Show(@"Selecione algum registro!", @"IFSP", MessageBoxButtons.OK,
                     MessageBoxIcon.Warning);
             }
         }
